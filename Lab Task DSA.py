@@ -27,33 +27,27 @@ class Stack:
                         check.pop()
                     else:
                         check1.append(val[num])
-                else: 
-                    closed = closed + 1
+                
             elif val[num] == ']':
                 if len(check) > 0:
                     if check[len(check)-1] == '[':
                         check.pop()
                     else:
                         check1.append(val[num])
-                else: 
-                    closed = closed + 1      
+                  
             elif val[num] == '}':
                 if len(check) > 0:
                     if check[len(check)-1] == '{':
                         check.pop()
                     else:
                         check1.append(val[num])
-                else: 
-                    closed = closed + 1
-            
-        
-        if len(check) == 0 and closed == 0:
+        if len(check) == 0 and len(check1) == 0:
             print('Balanced Expression')
         else:
             print('Unbalanced Expression')      
 
 
 s = Stack()
-s.is_balanced("a+b")
+s.is_balanced("[a+b]*{3+3}-(a+b)")
 
 
